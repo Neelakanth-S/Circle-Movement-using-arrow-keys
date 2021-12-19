@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circle Movement using arrow keys</title>
+    <style>
+        .circle{
+            height: 100px;
+            width: 100px;
+            border-radius: 50%;
+            background-color: rgb(12, 236, 105);
+        }
+        h2{
+            margin-left: 500px;
+        }
+    </style>
+   
+</head>
+<body>
+    <h2>Use the ⬅(left) ⬆(top) ➡(right) ⬇(bottom) arrow keys to move the circle</h2>
+    <div class="circle"></div>
+    <script>
+        let circle=document.querySelector('.circle');
+        let moveBy = 10;
+
+        window.addEventListener('load', () =>{
+            circle.style.position='absolute';
+            circle.style.left=0;
+            circle.style.top=0;
+
+        });
+        window.addEventListener('keyup',(e) =>{
+            switch(e.key){
+                case 'ArrowLeft':
+                    circle.style.left = parseInt(circle.style.left) - moveBy + 'px';
+                    break;
+
+                    case 'ArrowRight':
+                    circle.style.left = parseInt(circle.style.left) + moveBy + 'px';
+                    break;
+                    
+                    case 'ArrowUp':
+                    circle.style.top = parseInt(circle.style.top) - moveBy + 'px';
+                    break;
+
+                    case 'ArrowDown':
+                    circle.style.top = parseInt(circle.style.top) + moveBy + 'px';
+                    break;
+
+
+                    
+            }
+        });
+    </script>
+</body>
+</html>
